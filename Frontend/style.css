@@ -1990,3 +1990,50 @@ address a:hover {
   color: #6C3428;
   text-decoration: underline;
 }
+
+@media (max-width: 768px) {
+  .lead-1 {
+    font-size: 1.25rem;
+  }
+
+  .lead-2 {
+    font-size: 0.95rem;
+  }
+
+  .input-group {
+    max-width: 90%;
+
+  }
+
+  .form-control {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+
+  }
+
+  .btn-secondary-custom {
+    padding: 0.5rem 1rem;
+    margin-top: 5px;
+
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section-event {
+    padding: 2rem 0.5rem;
+  }
+
+  .input-group {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .form-control {
+    font-size: 0.85rem;
+  }
+
+  .btn-secondary-custom {
+    padding: 0.5rem;
+ 
+  }
+}
