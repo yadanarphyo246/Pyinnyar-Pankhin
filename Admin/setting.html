@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyinnyar Pankhin Admin Dashboard</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8z4+2e5c7e5a5e5a5e5a5e5a5e5a5e5a5e
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sidebar start -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h3><i class="fas fa-university me-2"></i>Pyinnyar Pankhin</h3>
+            <small>Admin Dashboard</small>
+        </div>
+        
+        <ul class="sidebar-menu">
+            <li>
+                <a href="./index.html">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+            
+            <li class="has-submenu">
+                <a href="">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Academic</span>
+                    <i class="fas fa-angle-down ms-auto"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="./academic.html" id="navDegree">Degree Programs</a></li>
+                    <li><a href="./academic.html" id="navMajor">Majors</a></li>
+                    <li><a href="./academic.html" id="navDepartment">Departments</a></li>
+                    <li><a href="./academic.html" id="navFaculty">Faculties</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="./student.html">
+                    <i class="fas fa-users"></i>
+                    <span>Students</span>
+                </a>
+            </li>
+            
+            <li class="has-submenu">
+                <a href="./academics-clendar.html">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Academic Calendar</span>
+                    <i class="fas fa-angle-down ms-auto"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="./academics-clendar.html">Events</a></li>
+                    <li><a href="./academics-clendar.html">Holidays</a></li>
+                    <li><a href="./academics-clendar.html">Exam Schedule</a></li>
+                </ul>
+            </li>
+            
+            <li class="has-submenu">
+                <a href="./reports.html" class="active">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Reports</span>
+                    <i class="fas fa-angle-down ms-auto"></i>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li><a href="./reports.html" class="active">Enrollment Reports</a></li>
+                    <li><a href="./reports.html">Grade Reports</a></li>
+                    <li><a href="./reports.html">Faculty Workload</a></li>
+                    <li><a href="./reports.html">Financial Reports</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- sidebar end -->
+
+    <div class="main-content">
+        <div class="header">
+            <h2><i class="fas fa-cog me-2"></i>System Settings</h2>
+            <div class="user-profile">
+                <img src="./assets/admin-avatar.jpg" alt="Admin Avatar">
+                <span>Admin User</span>
+            </div>
+        </div>
+
+        <div class="settings-container">
+            <div class="settings-tabs">
+                <button class="tab-btn active" data-tab="university-info">
+                    <i class="fas fa-university me-2"></i>University Info
+                </button>
+                <button class="tab-btn" data-tab="user-management">
+                    <i class="fas fa-users me-2"></i>User Management
+                </button>
+                <button class="tab-btn" data-tab="academic-settings">
+                    <i class="fas fa-graduation-cap me-2"></i>Academic
+                </button>
+                <button class="tab-btn" data-tab="student-settings">
+                    <i class="fas fa-user-graduate me-2"></i>Students
+                </button>
+                <button class="tab-btn" data-tab="faculty-settings">
+                    <i class="fas fa-chalkboard-teacher me-2"></i>Faculty
+                </button>
+                <button class="tab-btn" data-tab="finance-settings">
+                    <i class="fas fa-money-bill-wave me-2"></i>Finance
+                </button>
+                <button class="tab-btn" data-tab="system-settings">
+                    <i class="fas fa-desktop me-2"></i>System
+                </button>
+                <button class="tab-btn" data-tab="security-settings">
+                    <i class="fas fa-shield-alt me-2"></i>Security
+                </button>
+            </div>
+
+            <div class="settings-content">
+                <!-- University Information Settings -->
+                <div class="tab-pane active" id="university-info">
+                    <h3><i class="fas fa-university me-2"></i>University Information</h3>
+                    <form>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">University Name</label>
+                                <input type="text" class="form-control" value="Pyinnyar Pankhin University">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">University Motto</label>
+                                <input type="text" class="form-control" value="Knowledge, Wisdom, Excellence">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">University Logo</label>
+                            <input type="file" class="form-control">
+                            <small class="text-muted">Recommended size: 300x100 pixels</small>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Phone Number</label>
+                                <input type="text" class="form-control" value="+95 123456789">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Email Address</label>
+                                <input type="email" class="form-control" value="info@ppu.edu.mm">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Website</label>
+                                <input type="url" class="form-control" value="https://www.ppu.edu.mm">
+                            </div>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label class="form-label">Address</label>
+                            <textarea class="form-control" rows="2">123 University Avenue, Yangon, Myanmar</textarea>
+                        </div>
+                        
+                        <div class="row mb-3">
+                            <div class="col-md-4">
+                                <label class="form-label">Academic Year Start</label>
+                                <input type="date" class="form-control" value="2023-06-01">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Academic Year End</label>
+                                <input type="date" class="form-control" value="2024-03-31">
+                            </div>
+                            <div class="col-md-4">
+                                <label class="form-label">Current Semester</label>
+                                <select class="form-select">
+                                    <option>Semester 1</option>
+                                    <option selected>Semester 2</option>
+                                    <option>Summer Semester</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </form>
+                </div>
+
+                <!-- User Management Settings -->
+                <div class="tab-pane" id="user-management">
+                    <h3><i class="fas fa-users me-2"></i>User Management</h3>
+                    
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <h4>Roles & Permissions</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Role</th>
+                                            <th>Dashboard Access</th>
+                                            <th>Student Records</th>
+                                            <th>Academic Settings</th>
+                                            <th>Financial Access</th>
+                                            <th>System Settings</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Administrator</td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                            <td><input type="checkbox" checked disabled></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Faculty</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Student</td>
+                                            <td><input type="checkbox" checked></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                            <td><input type="checkbox"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Password Policy</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Minimum Password Length</label>
+                                        <input type="number" class="form-control" value="8">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password Complexity</label>
+                                        <select class="form-select">
+                                            <option>Low (Letters only)</option>
+                                            <option selected>Medium (Letters + Numbers)</option>
+                                            <option>High (Letters, Numbers, Special Characters)</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Password Expiry (days)</label>
+                                        <input type="number" class="form-control" value="90">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Authentication Methods</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="twoFactorAuth" checked>
+                                        <label class="form-check-label" for="twoFactorAuth">Two-Factor Authentication</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="ssoAuth">
+                                        <label class="form-check-label" for="ssoAuth">Single Sign-On (SSO)</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="ldapAuth">
+                                        <label class="form-check-label" for="ldapAuth">LDAP Integration</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="googleAuth" checked>
+                                        <label class="form-check-label" for="googleAuth">Google Authentication</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save User Settings</button>
+                </div>
+
+                <!-- Academic Settings -->
+                <div class="tab-pane" id="academic-settings">
+                    <h3><i class="fas fa-graduation-cap me-2"></i>Academic Settings</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Grading System</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Grading Scale</label>
+                                        <select class="form-select">
+                                            <option selected>Letter Grades (A-F)</option>
+                                            <option>Percentage Scale</option>
+                                            <option>GPA Scale (4.0)</option>
+                                            <option>Custom Scale</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Grade</th>
+                                                    <th>Minimum %</th>
+                                                    <th>Points</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>A</td>
+                                                    <td><input type="number" class="form-control" value="90"></td>
+                                                    <td><input type="number" class="form-control" value="4.0"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>B</td>
+                                                    <td><input type="number" class="form-control" value="80"></td>
+                                                    <td><input type="number" class="form-control" value="3.0"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>C</td>
+                                                    <td><input type="number" class="form-control" value="70"></td>
+                                                    <td><input type="number" class="form-control" value="2.0"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>D</td>
+                                                    <td><input type="number" class="form-control" value="60"></td>
+                                                    <td><input type="number" class="form-control" value="1.0"></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>F</td>
+                                                    <td><input type="number" class="form-control" value="0"></td>
+                                                    <td><input type="number" class="form-control" value="0.0"></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Credit System</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Credit Hours per Course</label>
+                                        <input type="number" class="form-control" value="3">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Full-time Student Minimum Credits</label>
+                                        <input type="number" class="form-control" value="12">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Maximum Credits Allowed</label>
+                                        <input type="number" class="form-control" value="18">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Academic Calendar</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Semester Duration (weeks)</label>
+                                        <input type="number" class="form-control" value="16">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Examination Period (weeks)</label>
+                                        <input type="number" class="form-control" value="2">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Break Between Semesters (weeks)</label>
+                                        <input type="number" class="form-control" value="4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Academic Settings</button>
+                </div>
+
+                <!-- Student Settings -->
+                <div class="tab-pane" id="student-settings">
+                    <h3><i class="fas fa-user-graduate me-2"></i>Student Management Settings</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Admission Settings</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Admission Intake Periods</label>
+                                        <select class="form-select" multiple>
+                                            <option selected>January Intake</option>
+                                            <option selected>June Intake</option>
+                                            <option>October Intake</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Application Fee</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" value="20">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Minimum Admission Age</label>
+                                        <input type="number" class="form-control" value="16">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Student ID Generation</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">ID Format</label>
+                                        <input type="text" class="form-control" value="PPU-{year}-{dept}-{seq}">
+                                        <small class="text-muted">Available placeholders: {year}, {dept}, {seq}, {random}</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Starting Sequence Number</label>
+                                        <input type="number" class="form-control" value="1001">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Attendance Policy</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Minimum Attendance %</label>
+                                        <input type="number" class="form-control" value="75">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Attendance Tracking Method</label>
+                                        <select class="form-select">
+                                            <option selected>Manual Entry by Faculty</option>
+                                            <option>Biometric System</option>
+                                            <option>QR Code Scanning</option>
+                                            <option>Mobile App Check-in</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Graduation Requirements</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Minimum GPA for Graduation</label>
+                                        <input type="number" step="0.1" class="form-control" value="2.0">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Required Community Service Hours</label>
+                                        <input type="number" class="form-control" value="40">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Thesis Requirement</label>
+                                        <select class="form-select">
+                                            <option selected>Required for all programs</option>
+                                            <option>Required for graduate programs only</option>
+                                            <option>Optional</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Student Settings</button>
+                </div>
+
+                <!-- Faculty Settings -->
+                <div class="tab-pane" id="faculty-settings">
+                    <h3><i class="fas fa-chalkboard-teacher me-2"></i>Faculty & Staff Settings</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Faculty Positions</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Faculty Ranks</label>
+                                        <textarea class="form-control" rows="4">Lecturer
+Assistant Professor
+Associate Professor
+Professor
+Emeritus Professor</textarea>
+                                        <small class="text-muted">Enter one rank per line</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Teaching Load</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Standard Teaching Load (hours/week)</label>
+                                        <input type="number" class="form-control" value="12">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Maximum Teaching Load</label>
+                                        <input type="number" class="form-control" value="18">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Leave Management</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Annual Leave Days</label>
+                                        <input type="number" class="form-control" value="30">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Sick Leave Days</label>
+                                        <input type="number" class="form-control" value="15">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Maternity/Paternity Leave</label>
+                                        <input type="number" class="form-control" value="90">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Evaluation Criteria</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Evaluation Frequency</label>
+                                        <select class="form-select">
+                                            <option>Every Semester</option>
+                                            <option selected>Annually</option>
+                                            <option>Every 2 Years</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Evaluation Components</label>
+                                        <select class="form-select" multiple>
+                                            <option selected>Teaching Quality</option>
+                                            <option selected>Research Output</option>
+                                            <option selected>Student Feedback</option>
+                                            <option selected>Committee Participation</option>
+                                            <option>Community Service</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Faculty Settings</button>
+                </div>
+
+                <!-- Finance Settings -->
+                <div class="tab-pane" id="finance-settings">
+                    <h3><i class="fas fa-money-bill-wave me-2"></i>Financial Settings</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Tuition Fees</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Base Tuition per Credit</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">$</span>
+                                            <input type="number" class="form-control" value="150">
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Science Program Surcharge (%)</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" value="10">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Graduate Program Surcharge (%)</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" value="20">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Payment Options</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="installmentPayments" checked>
+                                        <label class="form-check-label" for="installmentPayments">Allow Installment Payments</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Maximum Installments</label>
+                                        <input type="number" class="form-control" value="3">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Late Payment Fee (%)</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" value="5">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Payment Gateways</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="creditCardPayments" checked>
+                                        <label class="form-check-label" for="creditCardPayments">Credit/Debit Cards</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="bankTransfer" checked>
+                                        <label class="form-check-label" for="bankTransfer">Bank Transfer</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="mobilePayments">
+                                        <label class="form-check-label" for="mobilePayments">Mobile Payments</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="cashPayments" checked>
+                                        <label class="form-check-label" for="cashPayments">Cash Payments</label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Scholarships & Discounts</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Merit Scholarship Threshold (GPA)</label>
+                                        <input type="number" step="0.1" class="form-control" value="3.5">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Merit Scholarship Discount (%)</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" value="25">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Sibling Discount (%)</label>
+                                        <div class="input-group">
+                                            <input type="number" class="form-control" value="10">
+                                            <span class="input-group-text">%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save Financial Settings</button>
+                </div>
+
+                <!-- System Settings -->
+                <div class="tab-pane" id="system-settings">
+                    <h3><i class="fas fa-desktop me-2"></i>System & UI Settings</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Appearance</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Theme Color</label>
+                                        <div class="color-options">
+                                            <input type="radio" name="themeColor" id="blueTheme" checked>
+                                            <label for="blueTheme" class="color-box blue"></label>
+                                            
+                                            <input type="radio" name="themeColor" id="greenTheme">
+                                            <label for="greenTheme" class="color-box green"></label>
+                                            
+                                            <input type="radio" name="themeColor" id="purpleTheme">
+                                            <label for="purpleTheme" class="color-box purple"></label>
+                                            
+                                            <input type="radio" name="themeColor" id="redTheme">
+                                            <label for="redTheme" class="color-box red"></label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Dashboard Layout</label>
+                                        <select class="form-select">
+                                            <option selected>Default</option>
+                                            <option>Compact</option>
+                                            <option>Detailed</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Language</label>
+                                        <select class="form-select">
+                                            <option selected>English</option>
+                                            <option>Myanmar (Burmese)</option>
+                                            <option>Chinese</option>
+                                            <option>Other...</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Dashboard Widgets</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="enrollmentStats" checked>
+                                        <label class="form-check-label" for="enrollmentStats">Enrollment Statistics</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="revenueStats" checked>
+                                        <label class="form-check-label" for="revenueStats">Revenue Overview</label>
+                                    </div>
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="upcomingEvents" checked>
+                                        <label class="form-check-label" for="upcomingEvents">Upcoming Events</label>
+                                    </div>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input" type="checkbox" id="recentActivity" checked>
+                                        <label class="form-check-label" for="recentActivity">Recent Activity</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Notifications</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Notification Methods</label>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                            <label class="form-check-label" for="emailNotifications">Email Notifications</label>
+                                        </div>
+                                        <div class="form-check mb-2">
+                                            <input class="form-check-input" type="checkbox" id="smsNotifications">
+                                            <label class="form-check-label" for="smsNotifications">SMS Notifications</label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="inAppNotifications" checked>
+                                            <label class="form-check-label" for="inAppNotifications">In-App Notifications</label>
+                                        </div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Notification Frequency</label>
+                                        <select class="form-select">
+                                            <option>Immediate</option>
+                                            <option selected>Daily Digest</option>
+                                            <option>Weekly Summary</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>System Maintenance</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="maintenanceMode">
+                                        <label class="form-check-label" for="maintenanceMode">Maintenance Mode</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Backup Frequency</label>
+                                        <select class="form-select">
+                                            <option>Daily</option>
+                                            <option selected>Weekly</option>
+                                            <option>Monthly</option>
+                                        </select>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Last Backup</label>
+                                        <input type="text" class="form-control" value="2023-11-15 02:00 AM" readonly>
+                                    </div>
+                                    <button class="btn btn-outline-primary me-2">Backup Now</button>
+                                    <button class="btn btn-outline-secondary">Restore Backup</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Save System Settings</button>
+                </div>
+
+                <!-- Security Settings -->
+                <div class="tab-pane" id="security-settings">
+                    <h3><i class="fas fa-shield-alt me-2"></i>Security Settings</h3>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Access Control</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Session Timeout (minutes)</label>
+                                        <input type="number" class="form-control" value="30">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Failed Login Attempts Before Lockout</label>
+                                        <input type="number" class="form-control" value="5">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Account Lockout Duration (minutes)</label>
+                                        <input type="number" class="form-control" value="15">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>IP Restrictions</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="ipRestriction">
+                                        <label class="form-check-label" for="ipRestriction">Enable IP Whitelisting</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Allowed IP Addresses</label>
+                                        <textarea class="form-control" rows="3">192.168.1.1
+192.168.1.2
+192.168.1.3</textarea>
+                                        <small class="text-muted">Enter one IP per line</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <h4>Data Privacy</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="gdprCompliance" checked>
+                                        <label class="form-check-label" for="gdprCompliance">GDPR Compliance Mode</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Data Retention Period (months)</label>
+                                        <input type="number" class="form-control" value="36">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Anonymization Threshold</label>
+                                        <select class="form-select">
+                                            <option selected>After graduation + 1 year</option>
+                                            <option>After graduation</option>
+                                            <option>After 5 years of inactivity</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4>Audit Logging</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3">
+                                        <input class="form-check-input" type="checkbox" id="auditLogging" checked>
+                                        <label class="form-check-label" for="auditLogging">Enable Audit Logging</label>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Log Retention Period (days)</label>
+                                                                                <input type="number" class="form-control" value="90">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Log Detailed Events</label>
+                                        <select class="form-select">
+                                            <option selected>All critical events</option>
+                                            <option>All events</option>
+                                            <option>Only security events</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-header bg-danger text-white">
+                                    <h4>Danger Zone</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Reset All Settings to Default</label>
+                                        <button class="btn btn-outline-danger">Reset Settings</button>
+                                        <small class="text-muted d-block mt-1">This will restore all settings to their factory defaults</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Purge All Audit Logs</label>
+                                        <button class="btn btn-outline-danger">Purge Logs</button>
+                                    </div>
+                                    <div>
+                                        <label class="form-label">System Security Scan</label>
+                                        <button class="btn btn-outline-primary">Run Security Scan</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary mt-3">Save Security Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and panes
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked button
+                btn.classList.add('active');
+                
+                // Show corresponding pane
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Color theme selection
+        document.querySelectorAll('.color-options input').forEach(radio => {
+            radio.addEventListener('change', () => {
+                if(radio.checked) {
+                    // This would change the theme in a real application
+                    console.log('Theme changed to: ' + radio.id);
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Settings saved successfully!');
+            });
+        });
+        
+        // Add this to your existing $(document).ready() function
+        $(document).ready(function() {
+            // ... your existing code ...
+
+            // Handle sidebar submenu toggle
+            $('.has-submenu > a').on('click', function(e) {
+                e.preventDefault();
+                
+                // Close other open submenus
+                $(this).parent().siblings().removeClass('active').find('.sidebar-submenu').slideUp();
+                
+                // Toggle current submenu
+                $(this).parent().toggleClass('active');
+                $(this).next('.sidebar-submenu').slideToggle();
+            });
+
+            // Initialize with active submenu if on that page
+            $('.sidebar-menu li.has-submenu').each(function() {
+                if ($(this).find('a.active').length) {
+                    $(this).addClass('active');
+                    $(this).find('.sidebar-submenu').show();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
